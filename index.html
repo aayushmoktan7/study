@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Do you love me? ❤️</h1>
+    <div id="start-buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <div id="question-section" class="hidden">
+      <h2 id="question-text"></h2>
+      <div id="options"></div>
+      <button id="nextBtn" class="hidden">Continue</button>
+    </div>
+
+    <div id="result-section" class="hidden">
+      <h2>Your Match is Aayush!</h2>
+      <img src="assets/match-image.png" alt="Aayush" class="match-image">
+    </div>
+
+    <div id="rose-container" class="hidden"></div>
+    <audio id="bg-music" loop>
+      <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: pink;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  padding: 230px;
+}
+
+h1,
+h2 {
+  margin-bottom: 20px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Highlight selected option */
+button.selected {
+  background-color: #ff8c00; /* Highlight with a bright color */
+  color: white;
+  border: 2px solid #ff8c00;
+}
+
+/* No Button Hover Animation */
+#noBtn {
+  transition: transform 0.2s ease;
+}
+
+#noBtn:hover {
+  transform: scale(1.1);
+}
+
+/* Rose Emoji Styling */
+#rose-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.rose {
+  font-size: 3rem;
+  position: absolute;
+  animation: roseAnimation 5s linear infinite;
+}
+
+@keyframes roseAnimation {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(0.5) translateY(-100vh);
+  }
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffd700; /* Light gold background on hover */
+}
+
+.selected {
+  background-color: #4caf50; /* Green background for selected options */
+  color: white;
+}
+
+#start-buttons {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#rose-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rose {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: float 5s linear infinite;
+}
+
+.match-image {
+  height: 300px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
