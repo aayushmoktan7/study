@@ -1,62 +1,59 @@
-/* Global Styles */
 body {
-  font-family: "Dancing Script", cursive, sans-serif;
-  background: linear-gradient(135deg, #ff7eb9, #ff65a3);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #ff99cc,
+    #ff66b2
+  ); /* Soft pink gradient */
+  color: white;
+  text-align: center;
   overflow: hidden;
-  padding: 20px; /* Added padding for smaller screens */
+}
+
+.container {
+  padding: 200px 50px;
 }
 
 h1,
-h2,
-h3 {
-  font-family: "Great Vibes", cursive;
+h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #fff;
 }
 
-/* Romantic Button Styles */
 button {
-  font-size: 18px;
-  padding: 12px 30px;
-  background-color: #ff4f81;
-  color: white;
-  border: 2px solid #ff4f81;
-  border-radius: 30px;
+  font-size: 16px;
+  padding: 12px 25px;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
   margin: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-button:hover {
-  background-color: #ff377d;
-  transform: translateY(-5px);
-}
-
+/* Highlight selected option */
 button.selected {
-  background-color: #ff4f81;
+  background-color: #ff8c00;
   color: white;
-  border: 2px solid #ff4f81;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ff8c00;
 }
 
 /* No Button Hover Animation */
 #noBtn {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 #noBtn:hover {
   transform: scale(1.1);
-  background-color: #ff377d;
 }
 
-/* Rose Container (Emoji Animation) */
+/* Rose Emoji Styling */
 #rose-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -68,165 +65,176 @@ button.selected {
 .rose {
   font-size: 3rem;
   position: absolute;
-  animation: roseAnimation 6s ease-in-out infinite;
-  filter: blur(1px);
+  animation: roseAnimation 5s linear infinite;
 }
 
 @keyframes roseAnimation {
   0% {
     transform: scale(1) translateY(0);
   }
-  50% {
-    transform: scale(1.2) translateY(-50vh);
-  }
   100% {
-    transform: scale(1) translateY(-100vh);
+    transform: scale(0.5) translateY(-100vh);
   }
 }
 
-/* Question Section Styling */
-#question-section {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 100%;
-  max-width: 500px; /* Limit width on larger screens */
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffd700; /* Light gold background on hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
-#question-text {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-#options {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#options button {
-  margin: 5px;
-  font-size: 16px;
-  padding: 12px 25px;
-  border-radius: 25px;
-  background-color: #ff4f81;
-  border: none;
+/* Continue Button Style */
+#continueBtn {
+  background-color: #4caf50; /* Green for continue button */
   color: white;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-#options button:hover {
-  background-color: #ff377d;
-}
-
-/* Next Button */
-#nextBtn {
-  display: none;
+  border: 2px solid #4caf50;
   font-size: 18px;
-  padding: 12px 30px;
-  background-color: #ff4f81;
+  font-weight: bold;
+  padding: 14px 30px;
+  margin-top: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#continueBtn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* General Button Styles */
+button:not(#continueBtn):hover {
+  background-color: #ffd700;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.selected {
+  background-color: #4caf50; /* Green background for selected options */
   color: white;
-  border: 2px solid #ff4f81;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+}
+
+#start-buttons {
   margin-top: 20px;
 }
 
-#nextBtn:hover {
-  background-color: #ff377d;
-}
-
-/* Result Section */
-#result-section {
+.hidden {
   display: none;
-  text-align: center;
+}
+
+/* Rose Animation */
+#rose-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 500px;
+  height: 100%;
+  pointer-events: none;
 }
 
-#result-section h2 {
-  font-size: 36px;
-  font-family: "Great Vibes", cursive;
+.rose {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: float 5s linear infinite;
 }
 
-#result-section img {
-  width: 150px;
+.match-image {
+  height: 300px;
   border-radius: 50%;
   margin-top: 20px;
 }
 
-#result-section audio {
-  margin-top: 20px;
-  display: block;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  body {
-    padding: 10px; /* Add more padding for small screens */
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 150px 50px;
   }
 
-  #question-text {
-    font-size: 20px;
+  h1,
+  h2 {
+    font-size: 2rem;
   }
 
   button {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  #options button {
     font-size: 14px;
     padding: 10px 20px;
   }
 
-  #nextBtn {
+  #continueBtn {
     font-size: 16px;
-    padding: 10px 25px;
-  }
-
-  #result-section h2 {
-    font-size: 30px;
+    padding: 12px 28px;
   }
 
   #rose-container .rose {
-    font-size: 2.5rem; /* Smaller rose emoji on smaller screens */
+    font-size: 2.5rem;
   }
 }
 
-/* Very Small Screens (Portrait Mobiles) */
-@media (max-width: 480px) {
-  #question-section {
-    padding: 15px;
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 20px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
   }
 
   button {
     font-size: 14px;
-    padding: 8px 18px;
+    padding: 10px 18px;
   }
 
-  #options button {
-    font-size: 12px;
-    padding: 8px 15px;
-  }
-
-  #nextBtn {
-    font-size: 14px;
-    padding: 8px 20px;
-  }
-
-  #result-section h2 {
-    font-size: 24px;
+  #continueBtn {
+    font-size: 16px;
+    padding: 12px 26px;
   }
 
   #rose-container .rose {
     font-size: 2rem;
+  }
+
+  .match-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 80px 10px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  #continueBtn {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+  #rose-container .rose {
+    font-size: 1.5rem;
+  }
+
+  .match-image {
+    height: 150px;
   }
 }
